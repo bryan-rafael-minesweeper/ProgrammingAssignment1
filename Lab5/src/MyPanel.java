@@ -133,50 +133,5 @@ public class MyPanel extends JPanel {
 	}
 	//MY ARRAYS(Rafael Gonzalez Cartagena)
 	
-	/*
-	 * Create a new Random variable: newrand to be used when positioning the random bombs
-	 */
-	 public static Random newrand = new Random();
-	 
-	 /*
-	  * Since we have the Array: colorArray[][], we must create function ArrayList to read and modify
-	  * such array.
-	  * Create and ArrayList variable to read the array.
-	  * Will check random location
-	  * Create a variable unknown which will randomize location
-	  * If the random location doesnt contain a mine the add a mine in that bracket of array 
-	  */
-	 ArrayList<Integer> colorArrayText_MINES(int MINES_LOCATION){
-		 ArrayList<Integer> minerDecide = new ArrayList<Integer>();
-		 for (int i = 0; i<MINES_LOCATION;i++){
-			 int unknown = (int) ((newrand.nextInt())*Math.pow(colorArray.length,2));
-			 if (!minerDecide.contains(unknown)){
-				 minerDecide.add(unknown);
-			 }
-		 }
-		 return minerDecide;
-	 }
-	 
-	 /*
-	  * Create a new ArrayList so I can use the calorArrayText_MINES function. It will put 13 mines
-	  * 
-	  */
-	 public void sonLas126AM(){
-		 ArrayList<Integer> minerPut = new ArrayList<Integer>();
-		 minerPut = colorArrayText_MINES(13); //Pone las bombas
-		 for (int i:minerPut){ 
-			getLocalization(i,-1);
-		 }
-	 }
-	 public Color getLocalization(int c, int newVal){
-		 for (Color[] n1 : colorArray){
-			 for(Color n2 : n1){
-				 if(n2.equals(c)){
-					 n2.equals(newVal);
-					 return n2;
-				 }
-			 }
-		 }
-		 return null;
-	 }
+	//Dejame reditar todo Mierda
 }

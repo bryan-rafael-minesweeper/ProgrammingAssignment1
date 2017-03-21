@@ -131,31 +131,52 @@ public class MyPanel extends JPanel {
 		}
 		return y;
 	}
-	//MY ARRAYS
+	//MY ARRAYS(Rafael Gonzalez Cartagena)
 	
-	//Neta leer el libro hasta esta parte:
-	//1. Ok. Ya esta el otro array listo.
-	//2. So, si entendi bien, el ArrayList utiliza los braquets de los arrays y los lee
-	 public static Random newrand = new Random(); //Ok creo un random...
+	/*
+	 * Create a new Random variable: newrand to be used when positioning the random bombs
+	 */
+	 public static Random newrand = new Random();
 	 
-	 ArrayList<Integer> colorArrayText_MINES(int MINES_LOCATION){//Creo la estructura del libro de esto
-		 ArrayList<Integer> Haleluya = new ArrayList<Integer>();//Creo una variable (Dios plz help me)
-		 for (int i = 0; i<MINES_LOCATION;){//Creo que se puede utilizar por ya haber el color Array
-			 int unknown = (int) ((newrand.nextInt())*Math.pow(colorArray.length,2));//Cualquier numero..
-			 if (!Haleluya.contains(unknown)){//Contrario a lo que dice contains
-				 Haleluya.add(unknown);//Anado un espacio al array creo
-				 i++;//sumo i para seguir el proceso
+	 /*
+	  * Since we have the Array: colorArray[][], we must create function ArrayList to read and modify
+	  * such array.
+	  * Create and ArrayList variable to read the array.
+	  * Will check random location
+	  * Create a variable unknown which will randomize location
+	  * If the random location doesnt contain a mine the add a mine in that bracket of array 
+	  */
+	 ArrayList<Integer> colorArrayText_MINES(int MINES_LOCATION){
+		 ArrayList<Integer> minerDecide = new ArrayList<Integer>();
+		 for (int i = 0; i<MINES_LOCATION;i++){
+			 int unknown = (int) ((newrand.nextInt())*Math.pow(colorArray.length,2));
+			 if (!minerDecide.contains(unknown)){
+				 minerDecide.add(unknown);
 			 }
 		 }
-		 return Haleluya; //Traigo Haleluya
+		 return minerDecide;
 	 }
 	 
+	 /*
+	  * Create a new ArrayList so I can use the calorArrayText_MINES function. It will put 13 mines
+	  * 
+	  */
 	 public void sonLas126AM(){
-		 ArrayList<Integer> Haleluya2 = new ArrayList<Integer>();
-		 Haleluya2 = colorArrayText_MINES(13); //Pone las bombas
-		 for (int i : Haleluya2){ //Siempre y cuando i == Haleluya??
-			 System.out.print("Test"); //Que coje?? CORRE PERO PQ??PQ???PQ??????PQ?????
+		 ArrayList<Integer> minerPut = new ArrayList<Integer>();
+		 minerPut = colorArrayText_MINES(13); //Pone las bombas
+		 for (int i:minerPut){ 
+			getLocalization(i,-1);
 		 }
 	 }
-	 
+	 public Color getLocalization(int c, int newVal){
+		 for (Color[] n1 : colorArray){
+			 for(Color n2 : n1){
+				 if(n2.equals(c)){
+					 n2.equals(newVal);
+					 return n2;
+				 }
+			 }
+		 }
+		 return null;
+	 }
 }

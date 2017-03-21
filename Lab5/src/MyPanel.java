@@ -1,6 +1,7 @@
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Insets;
+import java.util.ArrayList;
 import java.util.Random;
 
 import javax.swing.JPanel;
@@ -18,8 +19,6 @@ public class MyPanel extends JPanel {
 	public int mouseDownGridY = 0;
 	public Color[][] colorArray = new Color[TOTAL_COLUMNS][TOTAL_ROWS];
 	
-	//Mamao te gusta? ===========D - - --- - |
-	//Tester 2
 	public MyPanel() {   //This is the constructor... this code runs first to initialize
 		if (INNER_CELL_SIZE + (new Random()).nextInt(1) < 1) {	//Use of "random" to prevent unwanted Eclipse warning
 			throw new RuntimeException("INNER_CELL_SIZE must be positive!");
@@ -132,4 +131,31 @@ public class MyPanel extends JPanel {
 		}
 		return y;
 	}
+	//MY ARRAYS
+	
+	//Neta leer el libro hasta esta parte:
+	//1. Ok. Ya esta el otro array listo.
+	//2. So, si entendi bien, el ArrayList utiliza los braquets de los arrays y los lee
+	 public static Random newrand = new Random(); //Ok creo un random...
+	 
+	 ArrayList<Integer> colorArrayText_MINES(int MINES_LOCATION){//Creo la estructura del libro de esto
+		 ArrayList<Integer> Haleluya = new ArrayList<Integer>();//Creo una variable (Dios plz help me)
+		 for (int i = 0; i<MINES_LOCATION;){//Creo que se puede utilizar por ya haber el color Array
+			 int unknown = (int) ((newrand.nextInt())*Math.pow(colorArray.length,2));//Cualquier numero..
+			 if (!Haleluya.contains(unknown)){//Contrario a lo que dice contains
+				 Haleluya.add(unknown);//Anado un espacio al array creo
+				 i++;//sumo i para seguir el proceso
+			 }
+		 }
+		 return Haleluya; //Traigo Haleluya
+	 }
+	 
+	 public void sonLas126AM(){
+		 ArrayList<Integer> Haleluya2 = new ArrayList<Integer>();
+		 Haleluya2 = colorArrayText_MINES(13); //Pone las bombas
+		 for (int i : Haleluya2){ //Siempre y cuando i == Haleluya??
+			 System.out.print("Test"); //Que coje?? CORRE PERO PQ??PQ???PQ??????PQ?????
+		 }
+	 }
+	 
 }

@@ -18,6 +18,7 @@ public class MyPanel extends JPanel {
 	public int mouseDownGridX = 0;
 	public int mouseDownGridY = 0;
 	public Color[][] colorArray = new Color[TOTAL_COLUMNS][TOTAL_ROWS];
+	public Color[][] minesLock = new Color[TOTAL_COLUMNS][TOTAL_ROWS];
 	
 	public MyPanel() {   //This is the constructor... this code runs first to initialize
 		if (INNER_CELL_SIZE + (new Random()).nextInt(1) < 1) {	//Use of "random" to prevent unwanted Eclipse warning
@@ -133,5 +134,39 @@ public class MyPanel extends JPanel {
 	}
 	//MY ARRAYS(Rafael Gonzalez Cartagena)
 	
-	//Dejame reditar todo Mierda
+	/*
+	 * Lo mejor en esta vida es que la Internet explica. La Internet es vida, gloria y profesora al 
+	 * mismo tiempo.
+	 * 
+	 * ----------------------------------------------------------------------------------------------
+	 * PARA BRIAN ==============================D------- ----- --- --|
+	 * ----------------------------------------------------------------------------------------------
+	 * 1. Primero que todo, por lo que se encuentra escrito en el libro:
+	 * 		a. Java tiene 2 ARRAYS: El normal y el ArrayLists
+	 * 			a1.El array normal, lo conocemos: Tiene un tamano definido, con sus variables definidas, y
+	 * 				es mas comun utilizarlo.
+	 * 			b1.El ArrayLists se utiliza cuand no sabes el tamano del array o la localizacion definida
+	 * 				de variables.
+	 * 
+	 * 2. La internet muestra ejemplos de como utilizar correctamente un ArrayList, ya que el libro
+	 * 		no ayudo. Es importante recalcar que he faltado a un puta clase y no he dormido casi nada. Yay!
+	 * 		(Ironicamente)
+	 */
+	public void mineRandom(){
+		//Create Array
+		ArrayList<Integer> mines = new ArrayList<Integer>();
+		//For to add a value at [i][k]
+		for(int i = 0; i<minesLock.length;i++){
+			for(int k = 0; k<minesLock.length;k++){
+				mines.add(i*100+k);
+			}
+		}
+		//Since colorArray was modified with second array. Will reset
+		minesLock = new Color[TOTAL_COLUMNS][TOTAL_ROWS];
+		//Decide the number of mines the game will have: 13
+		for(int i = 0; i<13;i++){
+			int randomMine = (int)((Math.random())*mines.size());
+			minesLock[mines.get(randomMine)/100][mines.get(randomMine)%100] = Color.BLACK;
+		}
+	}
 }

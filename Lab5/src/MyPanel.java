@@ -158,13 +158,13 @@ public class MyPanel extends JPanel {
 		//For to add a value at [i][k]
 		for(int i = 0; i<minesLock.length;i++){
 			for(int k = 0; k<minesLock.length;k++){
-				mines.add(i*100+k);
+				mines.add(i*100+k); //14-1 so that we can set how many mines be set per x axis number
 			}
 		}
 		//Since colorArray was modified with second array. Will reset
 		minesLock = new Color[TOTAL_COLUMNS][TOTAL_ROWS];
 		//Decide the number of mines the game will have: 13
-		for(int i = 0; i<13;i++){
+		for(int i = 0; i<12;i++){
 			int randomMine = (int)((Math.random())*mines.size());
 			minesLock[mines.get(randomMine)/100][mines.get(randomMine)%100] = Color.BLACK;
 		}

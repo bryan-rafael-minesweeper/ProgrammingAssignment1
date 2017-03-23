@@ -1,3 +1,5 @@
+import java.awt.Graphics2D;
+
 import javax.swing.JFrame;
 
 public class Main {

@@ -1,5 +1,6 @@
 import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.Graphics2D;
 import java.awt.Insets;
 import java.util.ArrayList;
 import java.util.Random;
@@ -146,5 +147,7 @@ public class MyPanel extends JPanel {
 			int randomMine = (int)((Math.random())*mines.size());
 			minesLock[mines.get(randomMine)/12][mines.get(randomMine)%12] = Color.BLACK;
 		}
+		
 	}
+
 }

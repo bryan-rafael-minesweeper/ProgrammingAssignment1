@@ -85,9 +85,7 @@ public class MyMouseAdapter extends MouseAdapter {
 			int gridY = myPanel.getGridY(x, y);
 			if ((myPanel.mouseDownGridX == -1) || (myPanel.mouseDownGridY == -1)) {
 				//Had pressed outside
-				myFrame.dispose();
-				Main new1 = new Main();
-				new1.main(null);
+				
 			} 
 			else {
 				if ((gridX == -1) || (gridY == -1)) {
@@ -141,7 +139,9 @@ public class MyMouseAdapter extends MouseAdapter {
 			int gridY2 = myPanel2.getGridY(_x, _y);
 			if ((myPanel2.mouseDownGridX == -1) || (myPanel2.mouseDownGridY == -1)) {
 				//Had pressed outside
-				//Do nothing
+				myFrame2.dispose();
+				Main new1 = new Main();
+				new1.main(null);
 			} 
 			else {
 				if ((gridX2 == -1) || (gridY2 == -1)) {

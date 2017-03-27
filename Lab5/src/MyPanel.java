@@ -147,7 +147,9 @@ public class MyPanel extends JPanel {
 			int randomMine = (int)((Math.random())*mines.size());
 			
 			/*
-			 * Ok! randoMine = (Int:Convierte el valor Random a Int) ((Math.random()*mines.size():La multiplicacion dice que el valor random va a ser dado por el tamano del array o sea A^2.)
+			 * Ok! randomMine = (Int:Convierte el valor Random a Int)
+			 * ((Math.random()*mines.size():La multiplicacion dice que el valor random 
+			 * va a ser dado por el tamano del array o sea A^2.)
 			 * OK! Para ver los valores de randomMine!
 			 */
 			System.out.println("Valores de randomMine: "+ randomMine);

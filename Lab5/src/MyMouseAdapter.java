@@ -7,6 +7,7 @@ import java.awt.event.WindowEvent;
 import java.util.Random;
 
 import javax.swing.JFrame;
+import javax.swing.JPanel;
 
 public class MyMouseAdapter extends MouseAdapter {
 	public void mousePressed(MouseEvent e) {
@@ -84,12 +85,13 @@ public class MyMouseAdapter extends MouseAdapter {
 			int gridY = myPanel.getGridY(x, y);
 			if ((myPanel.mouseDownGridX == -1) || (myPanel.mouseDownGridY == -1)) {
 				//Had pressed outside
-				//Do nothing
+				myFrame.dispose();
+				Main new1 = new Main();
+				new1.main(null);
 			} 
 			else {
 				if ((gridX == -1) || (gridY == -1)) {
 					//Is releasing outside
-					//Do nothing
 				} 
 				else {
 					if ((myPanel.mouseDownGridX != gridX) || (myPanel.mouseDownGridY != gridY)) {

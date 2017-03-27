@@ -145,6 +145,14 @@ public class MyPanel extends JPanel {
 		//Decide the number of mines the game will have: 13
 		for(int i = 0; i<12;i++){
 			int randomMine = (int)((Math.random())*mines.size());
+			
+			/*
+			 * Ok! randoMine = (Int:Convierte el valor Random a Int) ((Math.random()*mines.size():La multiplicacion dice que el valor random va a ser dado por el tamano del array o sea A^2.)
+			 * OK! Para ver los valores de randomMine!
+			 */
+			System.out.println("Valores de randomMine: "+ randomMine);
+			System.out.println("Valores en x: "+mines.get(randomMine)/12);
+			System.out.println("Valores en y: "+mines.get(randomMine)%12);
 			minesLock[mines.get(randomMine)/12][mines.get(randomMine)%12] = Color.BLACK;
 		}
 		

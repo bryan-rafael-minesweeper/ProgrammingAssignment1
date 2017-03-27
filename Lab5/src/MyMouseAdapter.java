@@ -105,7 +105,7 @@ public class MyMouseAdapter extends MouseAdapter {
 							if(myPanel.minesLock[myPanel.mouseDownGridX][myPanel.mouseDownGridY] == (Color.BLACK)){
 								myPanel.colorArray[myPanel.mouseDownGridX][myPanel.mouseDownGridY] = Color.BLACK;
 								myPanel.repaint();
-								myFrame.dispatchEvent(new WindowEvent(myFrame, WindowEvent.WINDOW_CLOSING));
+								//AQUI IBA EL CODIGO DE PERDER PERO LO QUITE PARA QUE PUEDAS DEBUG
 							}
 							else{
 								myPanel.colorArray[myPanel.mouseDownGridX][myPanel.mouseDownGridY] = Color.GRAY;
